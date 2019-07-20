@@ -13,6 +13,7 @@ user.save!
 
 department = Department.new({
     title: 'Beer',
+    user_id: 1
 })
 department.save!
 
@@ -28,6 +29,7 @@ department.save!
 
 department = Department.new({
     title: 'Coffee',
+    user_id: 1
 })
 department.save!
 
@@ -43,6 +45,7 @@ department.save!
 
 department = Department.new({
     title: 'Cannabis',
+    user_id: 1
 })
 department.save!
 
@@ -55,6 +58,8 @@ department.save!
       department_id: 3
   )
   end
+
+
 
 puts "Data Seeded."
 
