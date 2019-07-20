@@ -20,6 +20,7 @@ const App = () => (
       </Switch>
       </Container>
       </FetchUser>
+
   </Fragment>
 )
 
