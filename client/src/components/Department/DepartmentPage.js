@@ -9,7 +9,7 @@ class DepartmentPage extends Component {
 
   componentDidMount() {
     const { id } = this.props.location.state
-    axios.get(`/api/department/${id}`)
+    axios.get(`/api/departments/${id}`)
       .then(res => {
         this.setState({ products: res.data })
       })
@@ -36,5 +36,3 @@ class DepartmentPage extends Component {
 }
 
 export default DepartmentPage;
-
-//this page is located - Helper: api_course_path Path: /api/courses/:id Action: api/courses#show
