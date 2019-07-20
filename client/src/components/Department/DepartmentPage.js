@@ -1,42 +1,34 @@
 import React, { Component } from 'react';
-// import DepartmentHeader from './DepartmentHeader';
-// import DepartmentDescription from './DepartmentDescription';
-// import DepartmentOverview from './DepartmentOverview';
-// import DepartmentProductPlan from './DepartmentProductPlan';
-import { Header, Button, Divider, Grid, Icon, Search, Segment, Container } from "semantic-ui-react";
-// import Home from '../Home';
-// import ProductIndex from '../Product/ProductIndex';
+import DepartmentHeader from './DepartmentHeader';
+import ProductIndex from '../Product/ProductIndex';
 import axios from 'axios';
 
-class DepartmentPage extends React.Component {
+class DepartmentPage extends Component {
 
-  state = { departments:[] }
+  state = { products: [] }
 
-  componentDidMount(){
-    axios.get(`/api/departments`)
-    .then( res => {
-      this.setState({ departments: res.data })
-    })
-    .catch ( err => {
-      console.log(err)
-    })
+  componentDidMount() {
+    const { id } = this.props.location.state
+    axios.get(`/api/departments/${id}`)
+      .then(res => {
+        this.setState({ products: res.data })
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   render() {
-    const { title, id } = this.state
+    const { title, id, } = this.props.location.state
+    const { products } = this.state
     return (
       <>
-        {/* <DepartmentHeader
+        <DepartmentHeader
           department_id={id}
           title={title}
-          subtitle={subtitle}
         />
-        <DepartmentDescription
-          description={description}
-        />
-        <DepartmentOverview products={products}/>
-        <ProductIndex products={products}/>
-        <DepartmentProductPlan/> */}
+
+        <ProductIndex products={products} />
       </>
 
     )

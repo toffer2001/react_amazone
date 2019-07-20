@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Header, Navbar, Footer, Dimmer, Loader } from 'semantic-ui-react';
 import axios from 'axios';
+import DepartmentIndex from '../Department/DepartmentIndex';
 
 class Home extends Component {
 
@@ -17,7 +18,12 @@ class Home extends Component {
   }
 
   render() {
-    return(<Header as="h1" textAlign="center">Home!</Header>)
+    return(
+    <div>
+      <Header as="h1" textAlign="center">Home!</Header>
+      <DepartmentIndex departments={this.state.departments}/>
+    </div>
+    )
   }
 
 
