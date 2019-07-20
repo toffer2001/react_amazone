@@ -9,9 +9,12 @@ import Register from './components/Home/Register';
 import NoMatch from './components/Home/NoMatch';
 import DepartmentPage from './components/Department/DepartmentPage';
 import ProductPage from './components/Product/ProductPage';
+import Navbar from './components/Header/Navbar';
+
 
 const App = () => (
   <Fragment>
+    <Navbar />
     <FetchUser>
       <Container>
         <Switch>
