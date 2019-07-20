@@ -7,15 +7,19 @@ import ProtectedRoute from './components/Auth/ProtectedRoute';
 import Login from './components/Home/Login';
 import Register from './components/Home/Register';
 import NoMatch from './components/Home/NoMatch';
+import Navbar from './components/Header/Navbar';
+import DepartmentPage from './components/Department/DepartmentPage';
 
 const App = () => (
   <Fragment>
+    <Navbar />
     <FetchUser>
     <Container>
       <Switch>
-        <ProtectedRoute exact path="/" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
+        <Route exact path="/departments" component={DepartmentPage} />
         <Route component={NoMatch} />
       </Switch>
       </Container>
